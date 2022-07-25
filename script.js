@@ -10,27 +10,28 @@
 let gameSpeed = 5;
 
 const background = new Image();
-background.src = '/assets/layer1.png';
+background.src = 'layer1.png';
 const cloud1 = new Image();
-cloud1.src = '/assets/layer2.png';
+cloud1.src = 'layer2.png';
 const cloud2 = new Image();
-cloud2.src = '/assets/layer3.png';
+cloud2.src = 'layer3.png';
 const cloud3 = new Image();
-cloud3.src = '/assets/layer4.png';
+cloud3.src = 'layer4.png';
 const cloud4 = new Image();
-cloud4.src = '/assets/layer5.png';
+cloud4.src = 'layer5.png';
 const cloud5 = new Image();
-cloud5.src = '/assets/layer6.png';
+cloud5.src = 'layer6.png';
 const cloud6 = new Image();
-cloud6.src = '/assets/layer7.png';
+cloud6.src = 'layer7.png';
 const bushes = new Image();
-bushes.src = '/assets/layer8.png';
+bushes.src = 'layer8.png';
 const distant = new Image();
-distant.src = '/assets/layer9.png';
+distant.src = 'layer9.png';
 const trees = new Image();
-trees.src = '/assets/layer10.png';
+trees.src = 'layer10.png';
 const ground = new Image();
-ground.src = '/assets/layer11.png';
+ground.src = 'layer11.png';
+console.log(ground);
 
 
 
