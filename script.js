@@ -75,7 +75,7 @@ const layer9 = new Layer(distant, 0.6);
 const layer10 = new Layer(trees, 1);
 const layer11 = new Layer(ground, 1.2);
 
-
+// let
 // let x = 0;
 // let x2 = 2048;
 
