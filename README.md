@@ -185,6 +185,13 @@ animate();
 ```
 I'm still checking to all put this in an array so we dont have to repeat ourself for the layers in the animate function!
 I also noticed that all my pictures weren't in the assets folder, so I changed this to make my git alot more easier to read.
+
+### Things I wanna add more: 
+- sprite Player + class player 
+- key handlers for the class player
+- Make it a shooting game probably or collision game
+
+
 ### The result for now: 
 https://michaelmontei.github.io/Parallax-game/
 
