@@ -4,7 +4,7 @@ A page with a moving background that looks natural
 ## Where to start?
 In the beginning of this assigment I wasn't sure how to start, until I found something called a Canvas. 
 After some more research about the setup of a canvas and after some playful time in the weekend with Phaser, I realized I could setup this fairly easy. 
-So I started to upload all the images I needed, setup the HTML + the canvas and voila! Mission was born.
+So I started to upload all the images I needed, setup the HTML + the canvas and voila! Mission was born...
 
 ### Html Part
 ```html
