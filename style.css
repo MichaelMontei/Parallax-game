@@ -1,12 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body{
     background: black;
 }
 
 #canvas1{
     position: absolute;
-    border: 3px solid white;
-    width: 1920px;
-    height: 1080px;
+    width: 1750px;
+    height: 850px;
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
