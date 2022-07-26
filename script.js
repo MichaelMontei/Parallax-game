@@ -8,6 +8,7 @@
 // });
 // Scroll speed to slow down or speed up dynamically
 let gameSpeed = 5;
+const keys = [];
 
 const background = new Image();
 background.src = 'layer1.png';
@@ -39,11 +40,22 @@ const ship3 = new Image();
 ship3.src = 'layer14.png';
 
 const playerImage = new Image();
-playerImage.src = 'woof.png';
+playerImage.src = 'jawa.png';
 console.log(playerImage);
 
+// const player = {
+//     x: 0,
+//     y: 0,
+//     width: 32,
+//     height: 48,
+//     frameX: 0,
+//     frameY: 0,
+//     speed: 9,
+//     moving: false
+// };
 
-
+// const playerSprite = new Image();
+// playerSprite.src = "jawa.png";
 
 class Layer {
     constructor(image, speedModifier){
@@ -73,9 +85,24 @@ class Layer {
     }
 }
 
+class Player {
+
+    constructor(image, speed) {
+        this.image = image;
+        this.x = 300;
+        this.y = 800;
+        this.width = 300;
+        this.height = 300;
+        this.speed = speed;
+    }
+    draw() {
+        ctx.drawImage(playerImage, this.x, this.y, player.width, player.height);
+    }
+}
+
 const layer1 = new Layer(background, 0);
 const layer13 = new Layer(ship2, 1.7);
-const layer14 = new Layer(ship3, 1.7);
+const layer14 = new Layer(ship3, 2);
 const layer12 = new Layer(ship, 1.4);
 const layer2 = new Layer(cloud1, 0.9);
 const layer3 = new Layer(cloud2, 0.8);
@@ -87,16 +114,19 @@ const layer8 = new Layer(bushes, 0.5);
 const layer9 = new Layer(distant, 0.6);
 const layer10 = new Layer(trees, 1);
 const layer11 = new Layer(ground, 1);
+const player = new Player(playerImage, 5);
 
-
-// let
-// let x = 0;
-// let x2 = 2048;
-
-
+window.addEventListener('keydown', (e) => {
+    keys[e.key] = true;
+    console.log(keys)
+})
+window.addEventListener('keyup', (e) => {
+    delete keys[e.key];
+})
 
 function animate() {
     ctx.clearRect(0,0, CANVAS_WIDTH, CANVAS_HEIGHT);
+    // drawSprite(playerSprite, 0, 0, player.width, player.height, 0, 0, player.height, player.width);
     layer1.update();
     layer1.draw();
     layer2.update();
@@ -126,13 +156,19 @@ function animate() {
     layer14.update();
     layer14.draw();
 
-    // ctx.drawImage(ground1, x, 0);
-    // ctx.drawImage(ground1, x2, 0);
-    // ctx.drawImage(ground2, x, -650);
-    // if(x < -2048) x = 2048 + x2 - gameSpeed;
-    // else x -= gameSpeed;
-    // if(x2 < -2048) x2 = 2048 + x - gameSpeed;
-    // else x2 -= gameSpeed;
-    requestAnimationFrame(animate);
+    if(keys['ArrowUp']){
+        player.y -= player.speed;
+    }
+    if(keys['ArrowRight']){
+        player.x += player.speed;
+    }
+    if(keys['ArrowLeft']){
+        player.x -= player.speed;
+    }
+    if(keys['ArrowDown']){
+        player.y += player.speed;
+    }
+    player.draw();
+    requestAnimationFrame(animate)
 }
 animate();
