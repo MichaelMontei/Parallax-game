@@ -191,6 +191,51 @@ I also noticed that all my pictures weren't in the assets folder, so I changed t
 - key handlers for the class player
 - Make it a shooting game probably or collision game
 
+### Sprite Player movement:
+After checking multiple options, I finally was able to cut out the sprite in the right width and height and show it on the screen. 
+Afterwards I made an EventListener to when buttons were pressed down, so I could log these arrow and push them inside the keys array.
+```js
+const keys = [];
+
+class Player {
+
+    constructor(image, speed) {
+        this.image = image;
+        this.x = 300;
+        this.y = 800;
+        this.width = 300;
+        this.height = 300;
+        this.speed = speed;
+    }
+    draw() {
+        ctx.drawImage(playerImage, this.x, this.y, player.width, player.height);
+    }
+}
+
+window.addEventListener('keydown', (e) => {
+    keys[e.key] = true;
+    console.log(keys)
+})
+window.addEventListener('keyup', (e) => {
+    delete keys[e.key];
+})
+
+const player = new Player(playerImage, 5);
+
+if(keys['ArrowUp']){
+    player.y -= player.speed;
+}
+if(keys['ArrowRight']){
+    player.x += player.speed;
+}
+if(keys['ArrowLeft']){
+    player.x -= player.speed;
+}
+if(keys['ArrowDown']){
+    player.y += player.speed;
+}
+player.draw();
+```
 
 ### The result for now: 
 https://michaelmontei.github.io/Parallax-game/
