@@ -31,7 +31,16 @@ const trees = new Image();
 trees.src = 'layer10.png';
 const ground = new Image();
 ground.src = 'layer11.png';
-console.log(ground);
+const ship = new Image();
+ship.src = 'layer12.png';
+const ship2 = new Image();
+ship2.src = 'layer13.png';
+const ship3 = new Image();
+ship3.src = 'layer14.png';
+
+const playerImage = new Image();
+playerImage.src = 'woof.png';
+console.log(playerImage);
 
 
 
@@ -65,6 +74,9 @@ class Layer {
 }
 
 const layer1 = new Layer(background, 0);
+const layer13 = new Layer(ship2, 1.7);
+const layer14 = new Layer(ship3, 1.7);
+const layer12 = new Layer(ship, 1.4);
 const layer2 = new Layer(cloud1, 0.9);
 const layer3 = new Layer(cloud2, 0.8);
 const layer4 = new Layer(cloud3, 0.7);
@@ -74,11 +86,14 @@ const layer7 = new Layer(cloud6, 0.3);
 const layer8 = new Layer(bushes, 0.5);
 const layer9 = new Layer(distant, 0.6);
 const layer10 = new Layer(trees, 1);
-const layer11 = new Layer(ground, 1.2);
+const layer11 = new Layer(ground, 1);
+
 
 // let
 // let x = 0;
 // let x2 = 2048;
+
+
 
 function animate() {
     ctx.clearRect(0,0, CANVAS_WIDTH, CANVAS_HEIGHT);
@@ -104,6 +119,13 @@ function animate() {
     layer10.draw();
     layer11.update();
     layer11.draw();
+    layer12.update();
+    layer12.draw();
+    layer13.update();
+    layer13.draw();
+    layer14.update();
+    layer14.draw();
+
     // ctx.drawImage(ground1, x, 0);
     // ctx.drawImage(ground1, x2, 0);
     // ctx.drawImage(ground2, x, -650);
